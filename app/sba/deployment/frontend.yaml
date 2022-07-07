@@ -34,12 +34,8 @@ spec:
         imagePullPolicy: Always
         ports:
         - containerPort: 80
-          name: nginx
-        resources:
-          limits:
-            cpu: "10m"
-            memory: "50Mi"          
-        volumeMounts:
+          name: nginx        
+      volumeMounts:
           - name: nginx-config
             mountPath: /etc/nginx/nginx.conf
             subPath: nginx.conf
