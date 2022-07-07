@@ -35,7 +35,11 @@ spec:
         ports:
         - containerPort: 80
           name: nginx
-        volumeMounts:
+        resources:
+          limits:
+            cpu: "10m"
+            memory: "50Mi"          
+      volumeMounts:
           - name: nginx-config
             mountPath: /etc/nginx/nginx.conf
             subPath: nginx.conf
